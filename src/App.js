@@ -1,6 +1,6 @@
 import React from 'react';
 import BusinessList from './components/BusinessList';
-import SearchBar from './components/searchbar/SearchBar';
+import SearchBar from './components/SearchBar';
 import { Container, Navbar } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -11,7 +11,7 @@ const App = () => {
                 <Navbar.Brand>ravenous</Navbar.Brand>
             </Navbar>
             <SearchBar />
-            <Busines sList />
+            <BusinessList />
         </Container> 
     );
 };
