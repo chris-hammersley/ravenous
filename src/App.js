@@ -1,25 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import BusinessList from './components/BusinessList';
+import SearchBar from './components/searchbar/SearchBar';
+import { Container, Navbar } from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+function App () {
+    return (
+        <Container>
+            <Navbar className="justify-content-center" bg="warning" sticky="top">
+                <Navbar.Brand>ravenous</Navbar.Brand>
+            </Navbar>
+            <SearchBar />
+            <BusinessList />
+        </Container>
+    );
 }
 
 export default App;
