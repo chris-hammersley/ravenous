@@ -4,16 +4,16 @@ import SearchBar from './components/searchbar/SearchBar';
 import { Container, Navbar } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-function App () {
+const App = () => {
     return (
         <Container>
             <Navbar className="justify-content-center" bg="warning" sticky="top">
                 <Navbar.Brand>ravenous</Navbar.Brand>
             </Navbar>
             <SearchBar />
-            <BusinessList />
-        </Container>
+            <Busines sList />
+        </Container> 
     );
-}
+};
 
 export default App;

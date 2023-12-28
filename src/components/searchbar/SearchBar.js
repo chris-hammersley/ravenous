@@ -8,16 +8,24 @@ const sortByOptions = {
     "Most Reviewed": "review_count"
 };
 
-function SearchBar() {
+const SearchBar = () => {
+    const renderSortByOptions = () => {
+        return (
+            Object.keys(sortByOptions).map((sortByOption) => {
+            let sortByOptionValue = sortByOptions[sortByOption];
+            
+            return (
+            <ListGroup.Item key={sortByOptionValue}>{sortByOption}</ListGroup.Item>
+            );
+        })
+        );
+    };
+
     return (
         <Container>
             <div className="bg-image p-5 text-center shadow-1-strong rounded mb-5 text-white"
             style={{backgroundImage: "url('../../../public/search-bar-banner.jpg')"}}>
-                <ListGroup horizontal>
-                    <ListGroup.Item id="best-match">Best Match</ListGroup.Item>
-                    <ListGroup.Item id="highest-rated">Highest Rated</ListGroup.Item>
-                    <ListGroup.Item id="most-reviewed">Most Reviewed</ListGroup.Item>
-                </ListGroup>
+                <ListGroup horizontal>{renderSortByOptions}</ListGroup>
                 <Form>
                     <Row>
                         <Col>
@@ -34,6 +42,6 @@ function SearchBar() {
             </div>
         </Container>
     );
-}
+};
 
 export default SearchBar;
