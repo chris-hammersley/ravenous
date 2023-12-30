@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Form, Button, ListGroup } from 'react-bootstrap';
+import { Nav, Form, Button, Row, Col } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const sortByOptions = {
@@ -14,33 +14,36 @@ const SearchBar = () => {
             Object.keys(sortByOptions).map((sortByOption) => {
             let sortByOptionValue = sortByOptions[sortByOption];
             
-            return (
-            <ListGroup.Item key={sortByOptionValue}>{sortByOption}</ListGroup.Item>
-            );
-        })
+                return (
+                   <Nav.Item>
+                    <Nav.Link className="text-white" href={sortByOptionValue}>{sortByOption}</Nav.Link>
+                    </Nav.Item>
+                );
+            })
         );
     };
 
     return (
-        <Container>
-            <div className="bg-image p-5 text-center shadow-1-strong rounded mb-5 text-white"
-            style={{backgroundImage: "url('../../../public/search-bar-banner.jpg')"}}>
-                <ListGroup horizontal>{renderSortByOptions}</ListGroup>
+            <div className="p-5 bg-image text-center shadow-1-strong text-white"
+            style={{backgroundImage: 'url("./ravenous-search-background.jpg")', backgroundRepeat: 'no-repeat', width:'100%'}}>
+                <Nav justify variant="underline">
+                    {renderSortByOptions()}
+                </Nav>
+                <hr />
                 <Form>
                     <Row>
                         <Col>
-                            <Form.Control placeholder="Search Businesses" />
+                            <Form.Control className="w-75" placeholder="Search Businesses" />
                         </Col>
                         <Col>
-                            <Form.Control placeholder="Where?" />
+                            <Form.Control className="w-75" placeholder="Where?" />
                         </Col>
                     </Row>
-                    <Button variant="warning" type="submit">
+                    <Button variant="warning" type="submit" className="mt-4 p-3 mb-5 text-white">
                         Let's Go!
                     </Button>
                 </Form>
             </div>
-        </Container>
     );
 };
 

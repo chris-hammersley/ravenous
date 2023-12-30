@@ -1,15 +1,23 @@
 import React from 'react';
-import { business } from './Business.js';
+import Business from './Business';
+import { Col, Row } from 'react-bootstrap';
+
 
 // create array of fake business details
-let businesslist = [business, business, business, business, business, business];
+let businesslist = [Business, Business, Business, Business, Business, Business];
 
 const BusinessList = () => {
     return (
-        <div>
-            {businesslist.map(business => <business />)}
-        </div>
-    );
-};
+        <Row className="g-3">
+            {businesslist.map((business, index) => {
+                return (
+                    <Col key={index}>
+                        <Business business={business} key={index} />
+                    </Col>
+                )
+            })}
+        </Row>
+    )
+}
 
 export default BusinessList;

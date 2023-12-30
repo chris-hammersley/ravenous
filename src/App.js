@@ -6,7 +6,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 const App = () => {
     return (
-        <Container>
+        <Container fluid>
             <Navbar className="justify-content-center" bg="warning" sticky="top">
                 <Navbar.Brand>ravenous</Navbar.Brand>
             </Navbar>
