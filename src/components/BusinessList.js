@@ -1,12 +1,9 @@
 import React from 'react';
-import Business from './Business';
 import { Col, Row } from 'react-bootstrap';
+import Business from './Business';
 
 
-// create array of fake business details
-let businesslist = [Business, Business, Business, Business, Business, Business];
-
-const BusinessList = () => {
+const BusinessList = ( {businesslist} ) => {
     return (
         <Row className="g-3">
             {businesslist.map((business, index) => {
